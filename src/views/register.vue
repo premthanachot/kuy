@@ -101,10 +101,10 @@
             >
             </b-form-checkbox-group>
           </b-form-group>
-          <b-button variant="success" @click="addData()"
-            >Submit</b-button
-          >&nbsp;
-          <b-button type="reset" variant="danger">Reset</b-button>
+          <b-button variant="success" @click="addData()">Submit</b-button>&nbsp;
+          <b-button variant="danger" @click="reset()"
+            >Reset</b-button
+          >
         </b-form>
       </b-card>
     </b-container>
@@ -115,9 +115,9 @@
 export const db = firebase.firestore();
 import firebase from "firebase/app";
 export default {
-  data () {
+  data() {
     return {
-      data:[],
+      data: [],
       gender: [{ text: "Select One", value: null }, "Male", "Female", "Other"],
       show: true,
     };
@@ -133,27 +133,31 @@ export default {
         phone: this.phone,
         gender: this.gender,
       };
-      db.collection('User')
-        .doc('infouser')
+      db.collection("User")
+        .doc("infouser")
         .set(data)
         .then(function () {
-          console.log('Document successfully written! -> User');
+          console.log("Document successfully written! -> User");
         })
         .catch(function (error) {
-          console.error('Error writing document: ', error);
+          console.error("Error writing document: ", error);
         });
       const dataText = {
-        First_Name: this.name,
+        Email: this.email,
+        Password: this.pass,
+        Firstname: this.name,
+        Lasttname: this.surname,
+        Phone: this.phone,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       };
-      db.collection('MyText')
+      db.collection("MyText")
         .doc()
         .set(dataText)
         .then(function () {
-          console.log('Document successfully written! -> MyText');
+          console.log("Document successfully written! -> MyText");
         })
         .catch(function (error) {
-          console.error('Error writing document: ', error);
+          console.error("Error writing document: ", error);
         });
     },
     reset() {},

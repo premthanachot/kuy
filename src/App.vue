@@ -11,7 +11,7 @@
         </b-navbar-toggle>
         <b-collapse id="navbar-toggle-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
-            <!-- <b-nav-item href="/about">Profile</b-nav-item> -->
+            <b-nav-item><router-link to="/about">ตระกร้าสินค้า</router-link></b-nav-item>
             <b-nav-item href="/login">Login</b-nav-item>
             <b-nav-item href="/product">Product</b-nav-item>
           </b-navbar-nav>
