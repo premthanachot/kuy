@@ -3,7 +3,7 @@
     <b-container>
       <br />
       <b-card bg-variant="dark" text-variant="white" title="Register">
-        <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+        <b-form v-if="show">
           <b-row>
             <b-col cols="6">
               <b-form-group
@@ -38,11 +38,15 @@
           </b-row>
           <b-row>
             <b-col class="6">
-              <b-form-group id="input-group-2" label="Name" label-for="input-2">
+              <b-form-group
+                id="input-group-2"
+                label="First name"
+                label-for="input-2"
+              >
                 <b-form-input
                   id="input-2"
                   v-model="name"
-                  placeholder="Enter name"
+                  placeholder="Enter First name"
                   required
                 ></b-form-input>
               </b-form-group>
@@ -50,13 +54,13 @@
             <b-col class="6">
               <b-form-group
                 id="input-group-2"
-                label="Surname"
+                label="Last name"
                 label-for="input-2"
               >
                 <b-form-input
                   id="input-2"
                   v-model="surname"
-                  placeholder="Enter surname"
+                  placeholder="Enter Last name"
                   required
                 ></b-form-input>
               </b-form-group>
@@ -93,8 +97,13 @@
               </b-form-group>
             </b-col>
           </b-row>
-          <b-button v-on:click="$store.state.say('Register success!')" variant="success" @click="addData()">Submit</b-button>&nbsp;
-          <b-button variant="danger" @click="reset()">Reset</b-button>
+          <b-button
+            v-on:click="$store.state.say('Register success!')"
+            variant="success"
+            @click="addData()"
+            >Submit</b-button
+          >&nbsp;
+          <b-button onClick="javascript:location.reload();" variant="danger">Reset</b-button>
         </b-form>
       </b-card>
     </b-container>
@@ -116,12 +125,12 @@ export default {
     addData() {
       // เก็บข้อมูล Form ใน collection MyForm ( มี 1 document แต่จะ update ข้อมูลเรื่อย ๆ )
       const data = {
-        email: this.email,
-        name: this.name,
-        surname: this.surname,
-        pass: this.pass,
-        phone: this.phone,
-        gender: this.gender,
+        Email: this.email,
+        Firstname: this.name,
+        Lastname: this.surname,
+        Password: this.pass,
+        Phone: this.phone,
+        Gender: this.gender,
       };
       db.collection("User")
         .doc("infouser")
@@ -134,7 +143,6 @@ export default {
         });
       const dataText = {
         Email: this.email,
-        Password: this.pass,
         Firstname: this.name,
         Lasttname: this.surname,
         Phone: this.phone,
