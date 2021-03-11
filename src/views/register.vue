@@ -13,7 +13,7 @@
               >
                 <b-form-input
                   id="input-1"
-                  v-model="form.email"
+                  v-model="email"
                   type="email"
                   placeholder="Enter email"
                   required
@@ -28,7 +28,7 @@
               >
                 <b-form-input
                   id="input-1"
-                  v-model="form.pass"
+                  v-model="pass"
                   type="password"
                   placeholder="Enter password"
                   required
@@ -41,7 +41,7 @@
               <b-form-group id="input-group-2" label="Name" label-for="input-2">
                 <b-form-input
                   id="input-2"
-                  v-model="form.name"
+                  v-model="name"
                   placeholder="Enter name"
                   required
                 ></b-form-input>
@@ -55,7 +55,7 @@
               >
                 <b-form-input
                   id="input-2"
-                  v-model="form.surname"
+                  v-model="surname"
                   placeholder="Enter surname"
                   required
                 ></b-form-input>
@@ -71,7 +71,7 @@
               >
                 <b-form-input
                   id="input-3"
-                  v-model="form.phone"
+                  v-model="phone"
                   placeholder="Enter phone number"
                   type="tel"
                   required
@@ -86,7 +86,7 @@
               >
                 <b-form-select
                   id="input-3"
-                  v-model="form.gender"
+                  v-model="gender"
                   :options="gender"
                   required
                 ></b-form-select>
@@ -101,7 +101,7 @@
             >
             </b-form-checkbox-group>
           </b-form-group>
-          <b-button type="submit" variant="success" @click="addData()"
+          <b-button variant="success" @click="addData()"
             >Submit</b-button
           >&nbsp;
           <b-button type="reset" variant="danger">Reset</b-button>
@@ -114,43 +114,15 @@
 <script>
 export const db = firebase.firestore();
 import firebase from "firebase/app";
-import "firebase/firestore";
 export default {
   data () {
     return {
-      form: {
-        email: "",
-        name: "",
-        surname: "",
-        pass: "",
-        phone: "",
-        gender: null,
-        data:[],
-      },
+      data:[],
       gender: [{ text: "Select One", value: null }, "Male", "Female", "Other"],
       show: true,
     };
   },
   methods: {
-    onSubmit(event) {
-      event.preventDefault();
-      alert(JSON.stringify(this.form));
-    },
-    onReset(event) {
-      event.preventDefault();
-      // Reset our form values
-      this.form.email = "";
-      this.form.name = "";
-      this.form.surname = "";
-      this.form.pass = "";
-      this.form.phone = "";
-      this.form.gender = null;
-      // Trick to reset/clear native browser form validation state
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
-    },
     addData() {
       // เก็บข้อมูล Form ใน collection MyForm ( มี 1 document แต่จะ update ข้อมูลเรื่อย ๆ )
       const data = {
@@ -171,7 +143,7 @@ export default {
           console.error('Error writing document: ', error);
         });
       const dataText = {
-        First_Name: this.FN,
+        First_Name: this.name,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       };
       db.collection('MyText')
