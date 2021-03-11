@@ -93,18 +93,8 @@
               </b-form-group>
             </b-col>
           </b-row>
-          <b-form-group id="input-group-4" v-slot="{ ariaDescribedby }">
-            <b-form-checkbox-group
-              v-model="form.checked"
-              id="checkboxes-4"
-              :aria-describedby="ariaDescribedby"
-            >
-            </b-form-checkbox-group>
-          </b-form-group>
-          <b-button variant="success" @click="addData()">Submit</b-button>&nbsp;
-          <b-button variant="danger" @click="reset()"
-            >Reset</b-button
-          >
+          <b-button v-on:click="$store.state.say('Register success!')" variant="success" @click="addData()">Submit</b-button>&nbsp;
+          <b-button variant="danger" @click="reset()">Reset</b-button>
         </b-form>
       </b-card>
     </b-container>
