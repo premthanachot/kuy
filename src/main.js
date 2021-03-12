@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import firebase from 'firebase/app'
 import "firebase/firestore";
+import 'firebase/auth';
+
 if (!firebase.apps.length) {
   const firebaseConfig = {
     apiKey: "AIzaSyDXIfIa0Z_EtWhE_vyIw3QW179EdndUx0o",

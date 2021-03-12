@@ -5,7 +5,7 @@
         <br />
         <h1>Welcome to MIDORI</h1>
         <b-img
-          src="https://tuemaster.com/wp-content/uploads/2020/05/583651-topic-ix-23-1024x512.jpg"
+          src="https://i.pinimg.com/originals/5d/0a/92/5d0a92939cbdd8900cb67179c731f4d0.gif"
         ></b-img>
       </b-container>
       <b-container>
