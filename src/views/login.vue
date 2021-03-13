@@ -43,9 +43,7 @@
         <br />
         <b-button variant="primary" @click="login">Login by Google</b-button
         >&nbsp;
-        <!-- <button type="submit" class="btn btn-primary" @click="setup">
-          Login</button
-        >&nbsp; -->
+        <!-- <button type="submit" class="btn btn-primary">Login</button>&nbsp; -->
         <b-button
           variant="danger"
           @click="logout"
@@ -65,8 +63,11 @@ export const auth = firebase.auth();
 export default {
   data() {
     return {
-      email: null,
-      password: null,
+      loginForm: {
+        email: "",
+        password: "",
+      },
+      error: null,
     };
   },
   computed: {
@@ -93,19 +94,17 @@ export default {
           console.log(errorCode);
         });
     },
-    setup() {
+    logout() {
       firebase
         .auth()
-        .signInWithEmailAndPassword(this.email, this.password)
-        .catch(function (error) {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          if (errorCode == 'auth/weak-password'){
-            alert('The password is too weak.');
-          }else{
-            alert(errorMessage);
-          }
-          console.log();
+        .signOut()
+        .then(() => {
+          // Sign-out successful.
+          console.log('Sign-out successful')
+        })
+        .catch((error) => {
+          // An error happened.
+          console.log(error)
         })
     },
   },
