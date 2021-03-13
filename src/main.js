@@ -8,6 +8,8 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import firebase from 'firebase/app'
 import "firebase/firestore";
 import 'firebase/auth';
+import VueSimpleAlert from "vue-simple-alert";
+
 
 if (!firebase.apps.length) {
   const firebaseConfig = {
@@ -19,13 +21,16 @@ if (!firebase.apps.length) {
     appId: "1:1028424293729:web:961579088a182b99427920",
     measurementId: "G-16031ZTZ3X"
   };
-  firebase.initializeApp(firebaseConfig)
+  firebase.initializeApp(firebaseConfig);
 }
+firebase.auth().onAuthStateChanged(user => {
+  store.dispatch("fetchUser", user);
+});
+
 
 Vue.use(BootstrapVue)
-
+Vue.use(VueSimpleAlert);
 Vue.use(IconsPlugin)
-
 Vue.config.productionTip = false
 
 new Vue({

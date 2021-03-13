@@ -1,12 +1,11 @@
 <template>
   <div class="login">
-    <div>
-      
-    </div>
-    <br />
-    <br />
+    <div></div>
     <br />
     <b-container>
+      <h2>### Login โดยกดปุ่ม Login by Google นะครับ ###</h2>
+      <h2>### ต้อง Login ก่อนจึงจะเข้าหน้า Basket ได้ ###</h2>
+      <h2>### หน้า Basket คือหน้ากดสั่งสินค้า ###</h2>
       <b-card bg-variant="dark" text-variant="white" title="LOGIN">
         <b-row class="text-center">
           <b-col></b-col>
@@ -24,7 +23,7 @@
           </b-col>
           <b-col></b-col>
         </b-row>
-        <br>
+        <br />
         <b-row class="text-center">
           <b-col></b-col>
           <b-col class="8">
@@ -41,10 +40,19 @@
           </b-col>
           <b-col></b-col>
         </b-row>
-        <br>
-        <b-button variant="danger" @click="login">Login by Google</b-button>&nbsp;
-        <b-button variant="info">Login</b-button>&nbsp;
-        <b-button href="/register" variant="primary">Sign in</b-button>
+        <br />
+        <b-button variant="primary" @click="login">Login by Google</b-button
+        >&nbsp;
+        <!-- <button type="submit" class="btn btn-primary" @click="setup">
+          Login</button
+        >&nbsp; -->
+        <b-button
+          variant="danger"
+          @click="logout"
+          v-on:click="$store.state.say('Sign Out Success!!!')"
+          >Logout</b-button
+        >
+        <!-- <b-button href="/register" variant="primary">Sign in</b-button> -->
       </b-card>
     </b-container>
   </div>
@@ -53,10 +61,22 @@
 <script>
 import firebase from "firebase/app";
 export const auth = firebase.auth();
+
 export default {
-   methods: {
+  data() {
+    return {
+      email: null,
+      password: null,
+    };
+  },
+  computed: {
+    showErrors() {
+      return this.errors;
+    },
+  },
+  methods: {
     login() {
-      const provider = new firebase.auth.GoogleAuthProvider()
+      const provider = new firebase.auth.GoogleAuthProvider();
       auth
         .signInWithPopup(provider)
         .then((result) => {
@@ -64,30 +84,33 @@ export default {
           const credential = result.credential;
           const token = credential.accessToken;
           console.log(token);
-          const user = result.user
-          console.log('User = ' + user)
-          this.$router.replace('/product')
+          const user = result.user;
+          console.log("User = " + user);
+          this.$router.replace("/sucess");
         })
         .catch((error) => {
-          const errorCode = error.code
-          console.log(errorCode)
-        })
+          const errorCode = error.code;
+          console.log(errorCode);
+        });
     },
-    logout() {
+    setup() {
       firebase
         .auth()
-        .signOut()
-        .then(() => {
-          console.log('Sign-out successful')
-        })
-        .catch((error) => {
-          console.log(error)
+        .signInWithEmailAndPassword(this.email, this.password)
+        .catch(function (error) {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          if (errorCode == 'auth/weak-password'){
+            alert('The password is too weak.');
+          }else{
+            alert(errorMessage);
+          }
+          console.log();
         })
     },
   },
-}
+};
 </script>
 
 <style>
-
 </style>

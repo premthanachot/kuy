@@ -1,6 +1,9 @@
 <template>
   <div id="Home">
     <main class="container">
+      <br />
+      <h2>+++สามารถกดปุ่ม Basket เพื่อไปยังตะกร้าได้ ตรงนี้+++</h2>
+       <router-link to="/about" class="btn btn-outline-primary">Basket</router-link>
       <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
           <div class="col">
@@ -20,15 +23,17 @@
                   <button
                     type="button"
                     class="w-100 btn btn-lg btn-outline-primary"
-                    v-on:click="
-                      ($store.state.i1.amount += 1),
-                        $store.state.say(
-                          'เพิ่มสินค้าสำเร็จ สามารถตรวจสอบแก้ไขสินค้าได้ในตระกร้า'
-                        )
-                    "
+                    v-on:click="$store.state.i1.amount += 1"
                   >
                     เพิ่มสินค้า
                   </button>
+                  <!-- <button
+                    type="button"
+                    class="w-100 btn btn-lg btn-outline-danger"
+                    v-on:click="$store.state.i1.amount -= 1"
+                  >
+                    ลดสินค้า
+                  </button> -->
                   <p>จำนวน {{ $store.state.i1.amount }} เซ็ต</p>
                 </div>
               </div>
@@ -51,12 +56,7 @@
                   <button
                     type="button"
                     class="w-100 btn btn-lg btn-outline-primary"
-                    v-on:click="
-                      ($store.state.i2.amount += 1),
-                        $store.state.say(
-                          'เพิ่มสินค้าสำเร็จ สามารถตรวจสอบแก้ไขสินค้าได้ในตระกร้า'
-                        )
-                    "
+                    v-on:click="$store.state.i2.amount += 1"
                   >
                     เพิ่มสินค้า
                   </button>
@@ -82,12 +82,7 @@
                   <button
                     type="button"
                     class="w-100 btn btn-lg btn-outline-primary"
-                    v-on:click="
-                      ($store.state.i3.amount += 1),
-                        $store.state.say(
-                          'เพิ่มสินค้าสำเร็จ สามารถตรวจสอบแก้ไขสินค้าได้ในตระกร้า'
-                        )
-                    "
+                    v-on:click="$store.state.i3.amount += 1"
                   >
                     เพิ่มสินค้า
                   </button>
@@ -113,12 +108,7 @@
                   <button
                     type="button"
                     class="w-100 btn btn-lg btn-outline-primary"
-                    v-on:click="
-                      ($store.state.i4.amount += 1),
-                        $store.state.say(
-                          'เพิ่มสินค้าสำเร็จ สามารถตรวจสอบแก้ไขสินค้าได้ในตระกร้า'
-                        )
-                    "
+                    v-on:click="$store.state.i4.amount += 1"
                   >
                     เพิ่มสินค้า
                   </button>
@@ -144,12 +134,7 @@
                   <button
                     type="button"
                     class="w-100 btn btn-lg btn-outline-primary"
-                    v-on:click="
-                      ($store.state.i5.amount += 1),
-                        $store.state.say(
-                          'เพิ่มสินค้าสำเร็จ สามารถตรวจสอบแก้ไขสินค้าได้ในตระกร้า'
-                        )
-                    "
+                    v-on:click="$store.state.i5.amount += 1"
                   >
                     เพิ่มสินค้า
                   </button>
@@ -175,12 +160,7 @@
                   <button
                     type="button"
                     class="w-100 btn btn-lg btn-outline-primary"
-                    v-on:click="
-                      ($store.state.i6.amount += 1),
-                        $store.state.say(
-                          'เพิ่มสินค้าสำเร็จ สามารถตรวจสอบแก้ไขสินค้าได้ในตระกร้า'
-                        )
-                    "
+                    v-on:click="$store.state.i6.amount += 1"
                   >
                     เพิ่มสินค้า
                   </button>
@@ -206,12 +186,7 @@
                   <button
                     type="button"
                     class="w-100 btn btn-lg btn-outline-primary"
-                    v-on:click="
-                      ($store.state.i7.amount += 1),
-                        $store.state.say(
-                          'เพิ่มสินค้าสำเร็จ สามารถตรวจสอบแก้ไขสินค้าได้ในตระกร้า'
-                        )
-                    "
+                    v-on:click="$store.state.i7.amount += 1"
                   >
                     เพิ่มสินค้า
                   </button>
@@ -237,12 +212,7 @@
                   <button
                     type="button"
                     class="w-100 btn btn-lg btn-outline-primary"
-                    v-on:click="
-                      ($store.state.i8.amount += 1),
-                        $store.state.say(
-                          'เพิ่มสินค้าสำเร็จ สามารถตรวจสอบแก้ไขสินค้าได้ในตระกร้า'
-                        )
-                    "
+                    v-on:click="$store.state.i8.amount += 1"
                   >
                     เพิ่มสินค้า
                   </button>
@@ -269,12 +239,7 @@
                   <button
                     type="button"
                     class="w-100 btn btn-lg btn-outline-primary"
-                    v-on:click="
-                      ($store.state.i9.amount += 1),
-                        $store.state.say(
-                          'เพิ่มสินค้าสำเร็จ สามารถตรวจสอบแก้ไขสินค้าได้ในตระกร้า'
-                        )
-                    "
+                    v-on:click="$store.state.i9.amount += 1"
                   >
                     เพิ่มสินค้า
                   </button>
@@ -300,12 +265,7 @@
                   <button
                     type="button"
                     class="w-100 btn btn-lg btn-outline-primary"
-                    v-on:click="
-                      ($store.state.i10.amount += 1),
-                        $store.state.say(
-                          'เพิ่มสินค้าสำเร็จ สามารถตรวจสอบแก้ไขสินค้าได้ในตระกร้า'
-                        )
-                    "
+                    v-on:click="$store.state.i10.amount += 1"
                   >
                     เพิ่มสินค้า
                   </button>
@@ -331,12 +291,7 @@
                   <button
                     type="button"
                     class="w-100 btn btn-lg btn-outline-primary"
-                    v-on:click="
-                      ($store.state.i11.amount += 1),
-                        $store.state.say(
-                          'เพิ่มสินค้าสำเร็จ สามารถตรวจสอบแก้ไขสินค้าได้ในตระกร้า'
-                        )
-                    "
+                    v-on:click="$store.state.i11.amount += 1"
                   >
                     เพิ่มสินค้า
                   </button>
@@ -362,12 +317,7 @@
                   <button
                     type="button"
                     class="w-100 btn btn-lg btn-outline-primary"
-                    v-on:click="
-                      ($store.state.i12.amount += 1),
-                        $store.state.say(
-                          'เพิ่มสินค้าสำเร็จ สามารถตรวจสอบแก้ไขสินค้าได้ในตระกร้า'
-                        )
-                    "
+                    v-on:click="$store.state.i12.amount += 1"
                   >
                     เพิ่มสินค้า
                   </button>
@@ -383,31 +333,7 @@
 </template>
 
 <script>
-import firebase from 'firebase/app'
-export default {
-  data() {
-    return {
-      name: '',
-      email: '',
-      photoUrl: '',
-    }
-  },
-  beforeCreate() {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user != null) {
-        // User is signed in.
-        // show email name image
-        this.name = user.displayName
-        this.email = user.email
-        this.photoUrl = user.photoURL
-      } else {
-        // No user is signed in.
-        // return login
-        this.$router.replace('/login')
-      }
-    })
-  },
-};
+
 </script>
 
 <style>

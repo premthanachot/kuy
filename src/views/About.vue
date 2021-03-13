@@ -2,7 +2,7 @@
   <div class="About">
     <h1 class="text-center">รายการสินค้า</h1>
     <header class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
-      <div v-if="$store.state.i1.amount >= 1">
+      <div v-if="$store.state.i1.amount >= 1" >
         <img :src="$store.state.i1.image" width="100" />
         <p1> {{ $store.state.i1.name }} </p1>
         <button

@@ -10,7 +10,7 @@
       </b-container>
       <b-container>
         <br />
-        <b-button href="/register" variant="primary">Sign in now</b-button>
+        <b-button href="/login" variant="primary">Sign in now</b-button>
       </b-container>
     </div>
   </div>

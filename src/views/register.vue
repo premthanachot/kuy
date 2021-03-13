@@ -1,7 +1,7 @@
 <template>
   <div class="register">
     <b-card>
-      <h1 class="hh2">Contact</h1>
+      <h1 class="hh2">Register</h1>
     </b-card>
     <b-card>
       <b-card-group>
@@ -26,7 +26,7 @@
                   label-for="input-1"
                 >
                   <b-form-input
-                  class="h14"
+                    class="h14"
                     id="input-1"
                     v-model="email"
                     type="email"
@@ -105,7 +105,7 @@
               squared
               v-on:click="$store.state.say('Register success!')"
               variant="outline-light"
-              @click="addData()"
+              @click="addData"
               >Submit</b-button
             >&nbsp;
             <b-button
@@ -127,6 +127,8 @@ import firebase from "firebase/app";
 export default {
   data() {
     return {
+      form: { email: "", pass: "" },
+      isLoading: false,
       data: [],
       show: true,
       gender: null,
@@ -191,7 +193,6 @@ export default {
 }
 .hh1 {
   margin-top: 50px;
-  
 }
 .hh2 {
   background-color: rgb(53, 53, 53);
