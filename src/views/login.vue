@@ -1,65 +1,64 @@
 <template>
   <div class="login">
-    <div></div>
-    <br />
-    <b-container>
-      <h2>### Login โดยกดปุ่ม Login by Google นะครับ ###</h2>
-      <h2>### ต้อง Login ก่อนจึงจะเข้าหน้า Basket ได้ ###</h2>
-      <h2>### หน้า Basket คือหน้ากดสั่งสินค้า ###</h2>
-      <b-card bg-variant="dark" text-variant="white" title="LOGIN">
-        <b-row class="text-center">
-          <b-col></b-col>
-          <b-col class="8">
-            <b-card-text>
-              <b-form @submit.stop.prevent>
+    <div class="bg-img">
+       <div class="row">
+        <div class="col-md-12 "></div>
+        <div class="col-md-8 offset-md-2 info bg-custom">
+          <p class="text-center">
+            Login โดยกดปุ่ม Login by Google นะครับ 
+          </p>
+          <p>ต้อง Login ก่อนจึงจะเข้าหน้า Basket ได้ </p>
+          <p>หน้า Basket คือหน้ากดสั่งสินค้า </p> 
+        </div>
+      
+  <form action="/action_page.php" class="container">
+    <h1>Login</h1>
+    <b-form @submit.stop.prevent>
                 <label for="text-password">Email</label>
+                 <b-input-group>
+                <b-input-group-prepend is-text>
+                  <b-icon icon="envelope"></b-icon>
+                </b-input-group-prepend>
                 <b-form-input
                   type="email"
                   id="text-email"
                   aria-describedby="password-help-block"
                 ></b-form-input>
+                 </b-input-group>
               </b-form>
-            </b-card-text>
-          </b-col>
-          <b-col></b-col>
-        </b-row>
-        <br />
-        <b-row class="text-center">
-          <b-col></b-col>
-          <b-col class="8">
-            <b-card-text>
               <b-form @submit.stop.prevent>
                 <label for="text-password">Password</label>
+                 <b-input-group>
+                <b-input-group-prepend is-text>
+                  <b-icon icon="key"></b-icon>
+                </b-input-group-prepend>
                 <b-form-input
                   type="password"
                   id="text-password"
                   aria-describedby="password-help-block"
                 ></b-form-input>
+                  </b-input-group>
               </b-form>
-            </b-card-text>
-          </b-col>
-          <b-col></b-col>
-        </b-row>
-        <br />
-        <b-button variant="primary" @click="login">Login by Google</b-button
+              <br />
+    <b-button variant="outline-danger" @click="login"><b-icon icon="google"></b-icon> Login with Google+</b-button
         >&nbsp;
         <!-- <button type="submit" class="btn btn-primary">Login</button>&nbsp; -->
         <b-button
-          variant="danger"
+          variant="outline-info"
           @click="logout"
           v-on:click="$store.state.say('Sign Out Success!!!')"
-          >Logout</b-button
+          ><b-icon icon="power"></b-icon> Logout</b-button
         >
-        <!-- <b-button href="/register" variant="primary">Sign in</b-button> -->
-      </b-card>
-    </b-container>
+  </form>
   </div>
+</div>
+<hr/>
+</div>
 </template>
 
 <script>
 import firebase from "firebase/app";
 export const auth = firebase.auth();
-
 export default {
   data() {
     return {
@@ -112,4 +111,70 @@ export default {
 </script>
 
 <style>
+body, html {
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+.bg-img {
+  /* The image used */
+  background-image: url("https://wallpapercave.com/wp/wp2757890.gif");
+  /* Control the height of the image */
+  min-height: 580px;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: rgb(255, 255, 255);
+}
+/* Full-width input fields */
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 1px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+/* Set a style for the submit button */
+.btn {
+  padding: 16px 20px;
+  margin: 2%;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.btn:hover {
+  opacity: 1;
+}
+.bg-custom {
+  background-color: rgba(25, 13, 77, 0.9);
+  height: 30vh;
+  width: 10%;
+}
+.bg-img .info {
+  margin-top: 8%;
+  transform: translateY(-15%);
+  margin-left: 10%;
+}
+.bg-img .info p {
+  font-size: 2em;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
 </style>

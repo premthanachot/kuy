@@ -1,17 +1,15 @@
 <template>
   <div class="register">
     <b-card>
-      <h1 class="hh2">Register</h1>
+      <h1 class="hh2">Contact</h1>
     </b-card>
     <b-card>
       <b-card-group>
         <b-card>
-          <h1 class="hh1">Customer Service</h1>
+          <h1 class="hh1">รายละเอียดเพิ่มเติม</h1>
           <p>
-            I'm a paragraph. Click here to add your own text and edit me. It’s
-            easy. Just click “Edit Text” or double click me to add your own
-            content and make changes to the font. I’m a great place for you to
-            tell a story and let your users know a little more about you.
+            หากคุณยังไม่ได้เป็นสมาชิกกับทางเรา คุณจำเป็นต้องทำการลงทะเบียน เพื่อที่จะได้รับ
+            สิทธิประโยชน์ต่างๆจากทางเรา ขอให้ท่านเลือกซื้อสินค้าอย่างสนุก ทางเราขอขอบคุณครับ
           </p>
         </b-card>
 
@@ -118,6 +116,25 @@
         </b-card>
       </b-card-group>
     </b-card>
+    <br />
+    
+     <h1 class="center6"> Brands & Designers</h1>
+      
+      <b-card-group class="center4">
+        <b-card border-variant="secondary">
+          <img src="https://www.konceptfurniture.com/dist/images/logo.png" alt="">
+        </b-card>
+                <b-card border-variant="secondary">
+          <img src="https://i2.wp.com/www.iurban.in.th/wp-content/uploads/2016/06/logo-habitat-iurban.png?resize=1200%2C409&is-pending-load=1" alt="">
+        </b-card>
+                <b-card border-variant="secondary">
+          <img src="https://digital.hbs.edu/platform-rctom/wp-content/uploads/sites/4/2016/11/vintage-ralph-lauren_large-480x200.png" alt="">
+        </b-card>
+                <b-card border-variant="secondary">
+         <img src="https://searchlogovector.com/wp-content/uploads/2018/07/ethan-allen-logo-vector.png" alt="">
+        </b-card>
+        </b-card-group>
+
   </div>
 </template>
 
@@ -195,9 +212,13 @@ export default {
   margin-top: 50px;
 }
 .hh2 {
-  background-color: rgb(53, 53, 53);
+  background-color: rgb(24, 17, 51);
   color: rgb(255, 255, 255);
   line-height: 150px;
   font-size: 4rem;
+}
+.center6 {
+  margin-top: 60px;
+  text-align: center;
 }
 </style>

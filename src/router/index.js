@@ -36,10 +36,15 @@ const routes = [
     component: () => import('../views/sucess.vue')
   },
   {
-    path: '/admin',
-    name: 'Admin',
-    component: () => import('../views/admin.vue')
+    path: '/Stories',
+    name: 'Storiest',
+    component: () => import('../views/Stories.vue')
   },
+  {
+    path: '/abouts',
+    name: 'abouts',
+    component: () => import('../views/abouts.vue')
+},
 ]
 
 const router = new VueRouter({

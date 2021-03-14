@@ -1,15 +1,17 @@
 <template>
   <div>
-    <br>
+    <br />
     <div>
       <img :src="photoUrl" alt="Vuetify.js" class="mb-5" />
     </div>
     <footer>
       Hello!
       <em> {{ name }} </em><br />
-      <br>
+      <br />
       <h1>+++ Thank you for Login +++</h1>
-      <b-button href="/product">Shop Now</b-button>
+      <div>
+        <b-button href="/product">Shop Now</b-button>
+      </div>
       <h2></h2>
     </footer>
   </div>
