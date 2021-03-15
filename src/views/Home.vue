@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <h1 class="center1"><b-icon icon="bookmark-star"></b-icon> Sale</h1>
+    <h1 class="center1"><b-icon icon="bookmark-star" color="black"></b-icon> Sale</h1>
     <hr />
     <h1 class="center2"> Bestsellers</h1>
     <div class="container">
@@ -399,14 +399,17 @@
   margin-top: 40px;
   margin-bottom: 0.5rem;
   text-align: center;
+  color: black;
 }
 .center2 {
   margin-top: 60px;
   margin-block-end: 40px;
   text-align: center;
+  color: black;
 }
 .center3 {
   margin-top: 30px;
+  color: black;
 }
 .center4 {
   margin-top: 10px;
@@ -423,7 +426,7 @@
 .center4 img {
   width: 100%;
 }
-.body {
+body {
   margin: 0;
   padding: 0;
   background: #fff;
